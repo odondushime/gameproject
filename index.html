@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ GAME</title>
-    <script defer src="./app.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .question-container {
+      margin: 20px 0;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .scoreboard {
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-    
+  <h1>Welcome to the Quiz Game!</h1>
+  <div id="game">
+    <div id="intro">
+      <button class="btn" onclick="startGame()">Start Game</button>
+    </div>
+    <div id="quiz" style="display: none;">
+      <div class="question-container">
+        <h2 id="category"></h2>
+        <p id="question"></p>
+      </div>
+      <input type="text" id="answerInput" placeholder="Type your answer here" />
+      <button class="btn" onclick="submitAnswer()">Submit Answer</button>
+    </div>
+    <div class="scoreboard" id="scoreboard" style="display: none;">
+      <h2 id="finalScore"></h2>
+      <button class="btn" onclick="startGame()">Play Again</button>
+    </div>
+  </div>
 </body>
+<script src="quiz.js"></script>
 </html>
